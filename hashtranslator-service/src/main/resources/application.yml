@@ -1,3 +1,9 @@
 spring:
   application:
     name: hash-translator
+hashtranslator:
+  api:
+    url: https://md5decrypt.net/en/Api/api.php
+    hash_type: md5
+    email: vit.shvaichuk@gmail.com
+    code: 789366955397009f

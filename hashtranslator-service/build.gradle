@@ -12,7 +12,7 @@ repositories {
 group = 'tt.hashtranslator'
 version = '0.0.1'
 
-sourceCompatibility = '1.8'
+sourceCompatibility = '17'
 
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
@@ -22,10 +22,21 @@ jar {
     enabled = false // to prevent create plain jar
 }
 
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.projectlombok:lombok'
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.1'
+    testImplementation(platform('org.junit:junit-bom:5.9.2'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
 }

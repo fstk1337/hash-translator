@@ -3,18 +3,18 @@ package tt.hashtranslator.service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tt.hashtranslator.config.HelloProperties;
+import tt.hashtranslator.config.HashTranslatorProperties;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @Slf4j
 @Service
-public class HelloService {
-    private final HelloProperties properties;
+public class HashTranslatorService {
+    private final HashTranslatorProperties properties;
 
     @Autowired
-    public HelloService(HelloProperties properties) {
+    public HashTranslatorService(HashTranslatorProperties properties) {
         this.properties = properties;
     }
 
